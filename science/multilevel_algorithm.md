@@ -404,6 +404,8 @@ With exact projection, Markov's inequality gives failure probability at most $`1
 
 ### 7.2 Exact arithmetic and a finite projection algorithm
 
+To make the tolerance-input cost explicit, write the supplied tolerance as $`\epsilon=p/q`$, with positive integers $`p,q`$ encoded in binary, and let $`b`$ be their total encoding length. In $`O(b)`$ bit operations, replace it by the largest dyadic power $`\bar\epsilon`$ satisfying $`\bar\epsilon\leq\epsilon`$. The bit lengths determine two consecutive candidate exponents, and one shifted-integer comparison selects the correct one. Consequently $`\epsilon/2\lt\bar\epsilon\leq\epsilon`$. Run the allocation, grid construction, and error-budget choices above at $`\bar\epsilon`$. Subsequent allocation arithmetic then uses integers of $`O(\log(1/\epsilon))`$ bits, independently of the original fraction's encoding length. Accuracy at $`\bar\epsilon`$ implies the requested accuracy at $`\epsilon`$, and the resource bounds change only by constant factors. Including this preprocessing, classical processing costs $`O(b)+\widetilde O(\epsilon^{-2})`$ bit operations. The larger common denominator used below retains its separately charged quadratic-logarithmic bit length.
+
 The signed histogram can be accumulated by adding $`+1/n_\ell`$ and $`-1/n_\ell`$ at the two grid locations of each pair, together with the known base atom at $`+1`$. It is unnecessary to store the individual measurement records.
 
 For a simple exact representation, let $`D=\prod_{\ell=1}^{L}n_\ell`$. This need not be the least common denominator. Store the signed histogram and its CDF as integer numerators over $`D`$. Its bit length satisfies

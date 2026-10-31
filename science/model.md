@@ -22,7 +22,7 @@ Degeneracies are included in $`P_\lambda`$. The task estimates the energy law we
 
 ## 2. A completed classical output
 
-For an encoded rational tolerance $`0\lt \epsilon\le1/4`$, return a finite classical probability measure $`\widehat\mu`$ satisfying
+For a binary-encoded rational tolerance $`0\lt \epsilon\le1/4`$, return a finite classical probability measure $`\widehat\mu`$ satisfying
 
 ```math
 \Pr[W_1(\widehat\mu,\mu_{H,\rho})\le\epsilon]\ge\frac23.

@@ -27,7 +27,7 @@ For rational $`0\lt \epsilon\le1/4`$, the proved upper bounds are:
 
 Controlled evolution is explicitly supplied, and time means the sum of absolute interaction durations across all experiments. Block-encoding queries are a different access model, not an identification of physical time with gate count. State preparation, oracle construction, known gates, workspace, and finite-accuracy implementation have separate accounting in the [model](science/model.md) and [upper-bound proof](science/multilevel_algorithm.md).
 
-The classical processing bound is beyond reading the encoded tolerance; the tolerance may have an arbitrarily long input representation.
+An additional $`O(b)`$ bit operations handles a binary rational tolerance encoded in $`b`$ bits; the table's bound concerns the subsequent reconstruction. The proof makes this preprocessing explicit by rounding the tolerance down to a dyadic power.
 
 A complementary lower bound holds even when the source is known and freely reversible:
 
