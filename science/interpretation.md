@@ -62,7 +62,7 @@ The source-copy lower bound uses a separate family: two nearby unknown weights o
 
 ## Physical energy units and normalization
 
-Suppose a physical Hamiltonian $`A`$ has known bound $`\|A\|\le B`$ with $`B>0`$, and the desired Wasserstein error in energy units is $`\Delta`$. Set $`H=A/B`$ and $`\epsilon=\Delta/B`$, in the theorem's regime $`0<\Delta/B\le1/4`$. Pushing the returned measure forward by multiplication by $`B`$ gives physical error at most $`\Delta`$.
+Suppose a physical Hamiltonian $`A`$ has known bound $`\|A\|\le B`$ with $`B\gt 0`$, and the desired Wasserstein error in energy units is $`\Delta`$. Set $`H=A/B`$ and $`\epsilon=\Delta/B`$, in the theorem's regime $`0\lt \Delta/B\le1/4`$. Pushing the returned measure forward by multiplication by $`B`$ gives physical error at most $`\Delta`$.
 
 For evolution access, a normalized call $`e^{-itH}`$ is a physical call $`e^{-i(t/B)A}`$. In units with $`\hbar=1`$, the achieved scalings become
 
@@ -74,7 +74,7 @@ T_{\rm physical}
 
 with $`O(\Delta^{-1})`$ maximum interaction time per retained specimen. This is a unit conversion, not a free physical amplification of the Hamiltonian. An implementation may have overhead that depends on duration, requested accuracy, system size, or control strength.
 
-For a supplied block encoding of $`A/\alpha`$, the query bound instead uses $`\epsilon=\Delta/\alpha`$ in the regime $`0<\Delta/\alpha\le1/4`$ and becomes $`O((\alpha/\Delta)^2\log^3(\alpha/\Delta))`$. Query cost and physical interaction time are distinct. The comparison with density-operator spectrum lower bounds depends critically on this normalization; [Lower bounds, Section 10](lower_bounds.md#10-detailed-comparison-with-wangs-2026-spectrum-lower-bound) works through it explicitly.
+For a supplied block encoding of $`A/\alpha`$, the query bound instead uses $`\epsilon=\Delta/\alpha`$ in the regime $`0\lt \Delta/\alpha\le1/4`$ and becomes $`O((\alpha/\Delta)^2\log^3(\alpha/\Delta))`$. Query cost and physical interaction time are distinct. The comparison with density-operator spectrum lower bounds depends critically on this normalization; [Lower bounds, Section 10](lower_bounds.md#10-detailed-comparison-with-wangs-2026-spectrum-lower-bound) works through it explicitly.
 
 ## Boundaries of the claim
 

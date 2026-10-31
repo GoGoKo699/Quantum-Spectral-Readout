@@ -14,7 +14,7 @@ The source may be mixed and may have coherence between different energies. The a
 
 The protocol uses repeated phase measurements on each retained specimen to couple coarse and fine energy estimates. A multilevel estimator combines those pairs, and an exact isotonic projection converts its signed intermediate output into normalized, nonnegative probabilities.
 
-For rational $`0<\epsilon\le1/4`$, the proved upper bounds are:
+For rational $`0\lt \epsilon\le1/4`$, the proved upper bounds are:
 
 | Resource | Achieved bound |
 |---|---:|

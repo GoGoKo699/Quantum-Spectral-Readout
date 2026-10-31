@@ -29,7 +29,7 @@ For probability measures on the real line, write $`F_\nu(x)=\nu((-\infty,x])`$. 
 
 This is the one-dimensional Wasserstein/CDF identity; see Vallender [V74]. All measures constructed below are supported on $`[-1,1]`$, so the integral is restricted to that interval.
 
-**Theorem 1 (fresh-copy spectral readout).** For every rational $`0<\epsilon\leq 1/4`$, there is a protocol in the model above that outputs a finite classical probability measure $`\widehat\mu`$, supported on $`O(1/\epsilon)`$ explicitly specified rational grid points, such that
+**Theorem 1 (fresh-copy spectral readout).** For every rational $`0\lt \epsilon\leq 1/4`$, there is a protocol in the model above that outputs a finite classical probability measure $`\widehat\mu`$, supported on $`O(1/\epsilon)`$ explicitly specified rational grid points, such that
 
 ```math
  \Pr\{W_1(\widehat\mu,\mu)\leq\epsilon\}\geq 2/3.
@@ -91,7 +91,7 @@ $`|\sin(\pi u)|\geq 2d_{\mathbb T}(u,0)`$ give
        {4M^2d_{\mathbb T}(\theta,y/M)^2}\right\}.
 ```
 
-For $`s>0`$, a convenient uniform tail bound is
+For $`s\gt 0`$, a convenient uniform tail bound is
 
 ```math
  \Pr_\theta\{d_{\mathbb T}(\theta,y/M)\geq s\}
@@ -101,7 +101,7 @@ For $`s>0`$, a convenient uniform tail bound is
 Here is an elementary verification of the constant. Each distance annulus
 $`[k/M,(k+1)/M)`$ contains at most two clock points. If $`Ms\geq2`$ and $`r=\lfloor Ms\rfloor`$, summing the pointwise probability bound gives at most
 $`\frac12\sum_{k=r}^{\infty}k^{-2}\leq[2(r-1)]^{-1}`$.
-Since $`r-1\geq Ms/3`$ in this range, the result is at most $`2/(Ms)`$. If $`Ms<2`$, the bound by one suffices. Values $`s>1/2`$ have zero tail.
+Since $`r-1\geq Ms/3`$ in this range, the result is at most $`2/(Ms)`$. If $`Ms\lt 2`$, the bound by one suffices. Values $`s\gt 1/2`$ have zero tail.
 
 ### 2.2 An energy readout without phase aliasing
 
@@ -125,7 +125,7 @@ For every $`q\in[0,1)`$ and every $`\theta=\theta_\lambda`$,
  |g(q)-\lambda|\leq8d_{\mathbb T}(q,\theta).
 ```
 
-Indeed, when the shorter circular arc is the ordinary interval between $`q`$ and $`\theta`$, clipping cannot increase the error and the factor four suffices. Otherwise $`|q-\theta|>1/2`$; because $`\theta\in[1/4,3/4]`$, the circular distance is at least $`1/4`$, whereas the energy error is at most two. This proves the decoder bound also across the phase wrap.
+Indeed, when the shorter circular arc is the ordinary interval between $`q`$ and $`\theta`$, clipping cannot increase the error and the factor four suffices. Otherwise $`|q-\theta|\gt 1/2`$; because $`\theta\in[1/4,3/4]`$, the circular distance is at least $`1/4`$, whereas the energy error is at most two. This proves the decoder bound also across the phase wrap.
 
 Combining the circular-phase tail with the decoder bound, one ordinary readout $`X_M`$ satisfies
 
@@ -147,7 +147,7 @@ If the median differs from $`\lambda`$ by at least $`r`$, at least two readouts 
  \leq\min\{1,768/(M^2r^2)\}.
 ```
 
-Integrating this tail over $`0\leq r\leq2`$, or over the larger interval $`0\leq r<\infty`$, yields
+Integrating this tail over $`0\leq r\leq2`$, or over the larger interval $`0\leq r\lt \infty`$, yields
 
 ```math
  \mathbb E_\lambda|Y_M-\lambda|
@@ -308,7 +308,7 @@ Choose
        \quad(1\leq\ell\leq L).
 ```
 
-The constants are deliberately conservative and are not practical resource estimates. Since $`\sum_{\ell\geq0}(\ell+1)^{-2}<2`$, the variance bound and the variance-addition estimate imply
+The constants are deliberately conservative and are not practical resource estimates. Since $`\sum_{\ell\geq0}(\ell+1)^{-2}\lt 2`$, the variance bound and the variance-addition estimate imply
 
 ```math
  \mathbb E\|G-F_L\|_1
@@ -349,7 +349,7 @@ It follows that
  \end{aligned}
 ```
 
-The last equality uses $`2^L<48K/\epsilon`$. The pair-cost bound also gives the claimed $`O(1/\epsilon)`$ retained-experiment evolution bound.
+The last equality uses $`2^L\lt 48K/\epsilon`$. The pair-cost bound also gives the claimed $`O(1/\epsilon)`$ retained-experiment evolution bound.
 
 There are $`3\ell+3(\ell-1)`$ variable-time controlled-evolution calls in a level-$`\ell`$ pair. Summing against the allocation above shows that their count is
 $`O(\epsilon^{-2}+L^2)`$; the interaction time, rather than merely the number of variable-duration calls, is charged in the total-time bound. The known Fourier-transform gates and controls must also be implemented. With a standard circuit they require $`O(\ell^2)`$ elementary gates per pair before compiling rotation accuracy. Their total is $`O(\epsilon^{-2}+L^3)`$, up to the chosen finite-gate-set synthesis overhead. The cost of realizing each supplied controlled evolution is separate from this known-gate accounting.
@@ -363,7 +363,7 @@ An alternative allocation $`n_\ell=\lceil A'\epsilon^{-2}(L+1)2^{-\ell}\rceil`$ 
 The function $`G`$ is the CDF of a signed grid measure of total mass one. It can be negative or nonmonotone, so it is not an acceptable final probability measure.
 
 Let $`x_j=-1+jh`$ and let $`G_j`$ be the constant value of $`G`$ on
-$`[x_j,x_{j+1})`$, for $`0\leq j<J`$. Solve
+$`[x_j,x_{j+1})`$, for $`0\leq j\lt J`$. Solve
 
 ```math
  \min_{0\leq c_0\leq c_1\leq\cdots\leq c_{J-1}\leq1}
@@ -374,7 +374,7 @@ If an additive objective tolerance $`\zeta`$ is used, the returned value must be
 
 ```math
  \widehat p_0=c_0,\quad
- \widehat p_j=c_j-c_{j-1}\ (1\leq j<J),\quad
+ \widehat p_j=c_j-c_{j-1}\ (1\leq j\lt J),\quad
  \widehat p_J=1-c_{J-1},
  \qquad
  \widehat\mu=\sum_{j=0}^{J}\widehat p_j\delta_{x_j}.
@@ -425,10 +425,10 @@ The projection problem is ordinary isotonic $`L^1`$ regression. First replace ea
 so clipping changes the objective only by a constant. Rote's exact priority-queue algorithm [R19, Section 7, Algorithm 3; Section 8, Theorem 2, p. 1:6; Section 9 for uniform weights] computes a minimizer in $`O(J\log J)`$ comparisons/arithmetic operations and $`O(J)`$ storage. Its output values are selected from the clipped input values, so an optimal solution lies in $`[0,1]`$ and retains the same rational denominator. The common grid weight $`h`$ is irrelevant to the minimizer. Thus the output probabilities have $`O(L^2)`$-bit numerators and denominator.
 
 For a completely elementary fallback, sort
-$`\mathcal S=\{0,1\}\cup\{G_j:0<G_j<1\}`$.
+$`\mathcal S=\{0,1\}\cup\{G_j:0\lt G_j\lt 1\}`$.
 There is an optimal CDF projection taking all its values in $`\mathcal S`$. To see this, partition any optimum into maximal constant blocks. If an unanchored block value lies strictly between every data value and its neighboring block values, its objective is locally linear. A nonzero slope contradicts optimality, while a zero slope allows the block to move until it reaches a data value, a boundary, or a preceding anchored block. Repeating from left to right anchors every block without increasing cost.
 
-Writing the sorted candidates as $`s_1<\cdots<s_q`$, use
+Writing the sorted candidates as $`s_1\lt \cdots\lt s_q`$, use
 
 ```math
  B_{0,k}=h|s_k-G_0|,\qquad
@@ -533,7 +533,7 @@ Let $`\Pi=JJ^\dagger`$, $`R=2\Pi-I`$, and
 The reflection $`R`$ is about a known flag/encoding-ancilla state, tensored with the identity on the source. It is not a reflection about $`\rho`$. This construction is a direct instance of standard qubitization [LC19, Theorem 2; Section 4, Corollary 9 and Lemma 10].
 
 For completeness, if $`H|\lambda\rangle=\lambda|\lambda\rangle`$, set
-$`u_\lambda=J|\lambda\rangle`$. For $`|\lambda|<1`$, put
+$`u_\lambda=J|\lambda\rangle`$. For $`|\lambda|\lt 1`$, put
 
 ```math
  s_\lambda=\sqrt{1-\lambda^2},\qquad

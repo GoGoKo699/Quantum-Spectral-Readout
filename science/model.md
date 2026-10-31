@@ -22,7 +22,7 @@ Degeneracies are included in $`P_\lambda`$. The task estimates the energy law we
 
 ## 2. A completed classical output
 
-For an encoded rational tolerance $`0<\epsilon\le1/4`$, return a finite classical probability measure $`\widehat\mu`$ satisfying
+For an encoded rational tolerance $`0\lt \epsilon\le1/4`$, return a finite classical probability measure $`\widehat\mu`$ satisfying
 
 ```math
 \Pr[W_1(\widehat\mu,\mu_{H,\rho})\le\epsilon]\ge\frac23.
@@ -125,7 +125,7 @@ Here logarithmic notation concerns precision dependence; it does not hide the im
 
 ### Separate minimax lower bounds
 
-For $`0<\epsilon\le1/256`$ and all integers $`d\ge1`$,
+For $`0\lt \epsilon\le1/256`$ and all integers $`d\ge1`$,
 
 ```math
 T,\ Q_H=\Omega\!\left(\frac{\min\{d,\epsilon^{-1}\}}{\epsilon}\right).
