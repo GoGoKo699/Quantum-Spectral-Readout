@@ -1,0 +1,183 @@
+{
+  "purpose": "Finite convention and algebra checks; not an asymptotic proof.",
+  "adversary": [
+    {
+      "d": 1,
+      "m": 1,
+      "eps": 0.001953125,
+      "delta": 0.0625,
+      "ranks": [
+        1
+      ],
+      "hamiltonian_commutator_norm": 0.125,
+      "block_oracle_commutator_norm": 0.125,
+      "largest_oracle_edge_norm": 0.125,
+      "evolution_checks": [
+        {
+          "t": 0.0,
+          "commutator_norm": 0.0
+        },
+        {
+          "t": 0.25,
+          "commutator_norm": 0.031248728449766745
+        },
+        {
+          "t": 1.0,
+          "commutator_norm": 0.1249186356847604
+        },
+        {
+          "t": 7.5,
+          "commutator_norm": 0.9035429429833676
+        },
+        {
+          "t": 25.132741228718345,
+          "commutator_norm": 2.0
+        }
+      ]
+    },
+    {
+      "d": 5,
+      "m": 3,
+      "eps": 0.001,
+      "delta": 0.032,
+      "ranks": [
+        2,
+        2,
+        1
+      ],
+      "hamiltonian_commutator_norm": 0.064,
+      "block_oracle_commutator_norm": 0.06453137979937178,
+      "largest_oracle_edge_norm": 0.06453137979937175,
+      "evolution_checks": [
+        {
+          "t": 0.0,
+          "commutator_norm": 0.0
+        },
+        {
+          "t": 0.25,
+          "commutator_norm": 0.01599982933387947
+        },
+        {
+          "t": 1.0,
+          "commutator_norm": 0.06398907789256025
+        },
+        {
+          "t": 7.5,
+          "commutator_norm": 0.4754052528542692
+        },
+        {
+          "t": 49.087385212340514,
+          "commutator_norm": 2.0
+        }
+      ]
+    },
+    {
+      "d": 7,
+      "m": 4,
+      "eps": 0.0009765625,
+      "delta": 0.03125,
+      "ranks": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "hamiltonian_commutator_norm": 0.0625,
+      "block_oracle_commutator_norm": 0.06362965086515021,
+      "largest_oracle_edge_norm": 0.06362965086515016,
+      "evolution_checks": [
+        {
+          "t": 0.0,
+          "commutator_norm": 0.0
+        },
+        {
+          "t": 0.25,
+          "commutator_norm": 0.015624841054765665
+        },
+        {
+          "t": 1.0,
+          "commutator_norm": 0.062489827970652154
+        },
+        {
+          "t": 7.5,
+          "commutator_norm": 0.46447023722302294
+        },
+        {
+          "t": 50.26548245743669,
+          "commutator_norm": 2.0
+        }
+      ]
+    }
+  ],
+  "transport": [
+    {
+      "d": 1,
+      "m": 1,
+      "maximum_pairwise_formula_residual": 0.0,
+      "arbitrary_output_cases": 600,
+      "minimum_decoder_slack": 0.006000506705000186,
+      "minimum_jensen_slack": -2.220446049250313e-16
+    },
+    {
+      "d": 5,
+      "m": 3,
+      "maximum_pairwise_formula_residual": 0.0,
+      "arbitrary_output_cases": 600,
+      "minimum_decoder_slack": 0.05614939413172183,
+      "minimum_jensen_slack": -1.1102230246251565e-16
+    },
+    {
+      "d": 7,
+      "m": 4,
+      "maximum_pairwise_formula_residual": 0.0,
+      "arbitrary_output_cases": 600,
+      "minimum_decoder_slack": 0.04725899619517944,
+      "minimum_jensen_slack": -2.220446049250313e-16
+    }
+  ],
+  "edge_fidelity": {
+    "grid_pairs": 1002001,
+    "maximum_edge_inequality_violation": 0.0,
+    "mean_error": 0.375,
+    "final_progress_factor": 0.9682458365518543,
+    "kappa": 0.031754163448145745
+  },
+  "purifiers": [
+    {
+      "eps": 0.0001,
+      "norm_difference": 0.00020000000100004614,
+      "hybrid_query_lower_bound": 1666.666658332949
+    },
+    {
+      "eps": 0.001,
+      "norm_difference": 0.002000001000001693,
+      "hybrid_query_lower_bound": 166.6665833332339
+    },
+    {
+      "eps": 0.01,
+      "norm_difference": 0.020001000175041212,
+      "hybrid_query_lower_bound": 16.665833229144827
+    },
+    {
+      "eps": 0.1,
+      "norm_difference": 0.20101792401041646,
+      "hybrid_query_lower_bound": 1.6582269216752057
+    },
+    {
+      "eps": 0.25,
+      "norm_difference": 0.5176380902050417,
+      "hybrid_query_lower_bound": 0.6439505508593787
+    }
+  ],
+  "midpoint_counterexample": {
+    "m": 1,
+    "baseline": 0.0,
+    "true_bit": -1,
+    "decoded_tie_bit": 1,
+    "displacement": 0.1,
+    "w1": 0.1,
+    "invalid_twice_displacement_decoder_bound": 0.2,
+    "rejects_invalid_factor_two": true
+  },
+  "all_checks_passed": true
+}
