@@ -67,6 +67,14 @@ The lower-bound machinery is standard. Its task-specific part is an ordered spec
 
 The repository is a mathematical research note with executable finite checks. The checks test identities and conventions; the analytical proofs establish the asymptotic statements. They do not certify novelty or simulate a fault-tolerant implementation.
 
+## Learn the project
+
+The single educational anchor is **Andrew M. Childs, *Lecture Notes on Quantum Algorithms*, 17 April 2025**. The [Childs bridge](learning/CHILDS_BRIDGE.md) connects the notes' phase estimation, energy measurement, qubitization, and adversary arguments to this project's access model and proofs. It translates notation and develops the additional links through retained-source measurements, Wasserstein distance, multilevel estimation, and positive probability reconstruction.
+
+The [30-milestone map](learning/MILESTONES.md) uses **12 background/preliminaries milestones** to connect states, measurements, metrics, and resource conventions, followed by **18 narrative/innovation milestones** that assemble the upper construction, lower bounds, and their joint interpretation. Each milestone identifies a central question, an understanding target, earlier dependencies, a conceptual connection, and the relevant scientific sources. The map describes the project's concepts independently of any reader's prior knowledge or assessment history.
+
+Use the bridge alongside the map for self-directed study. [The LLM reading guide](llms.txt) gives story, study, theorem, and reproduction routes; the direct scientific route above leads to the full statements and proofs.
+
 ## Run the checks
 
 ```bash
