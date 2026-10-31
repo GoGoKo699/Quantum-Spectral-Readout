@@ -14,6 +14,24 @@
 - [Bibliography](references/references.bib): Machine-readable source metadata.
 - [Verification](verification/README.md): Reproduction commands and finite-check scope.
 
+## Learning entry points
+
+- [Childs bridge](learning/CHILDS_BRIDGE.md): The single educational anchor, Andrew M. Childs's Lecture Notes on Quantum Algorithms (17 April 2025); verified source locations, notation translation, and the additional steps to the project.
+- [30-milestone map](learning/MILESTONES.md): A learner-independent route through background/preliminaries and narrative/innovation, with conceptual targets, earlier dependencies, and authoritative source pointers.
+
+## Routes by reader intention
+
+- Understand the story: README.md → science/model.md → science/interpretation.md → science/resources.md. The question is how to produce a reusable classical energy distribution with independently charged source and Hamiltonian resources.
+- Study the project: learning/CHILDS_BRIDGE.md alongside learning/MILESTONES.md; follow each milestone's references into science/. The anchor supplies the algorithms foundation; the repository supplies the transport, instrument, multilevel, and reconstruction connections.
+- Inspect the upper theorem: science/model.md for the exact interfaces, then science/multilevel_algorithm.md for the retained-system instrument, variance allocation, positive reconstruction, block-encoding extension, and implementation costs.
+- Inspect the lower theorem: science/lower_bounds.md for the ordered spectral packing, arbitrary-output quantile decoder, weak oracle construction, adaptive summed-time bound, and separate source-access families.
+- Compare prior work: references/related_work.md and science/resources.md. Preserve the access model, loss metric, normalization, dimension, and charged resources of each comparator.
+- Reproduce the finite checks: verification/README.md, then run python3 verification/run_all.py from the repository root in the documented environment. Expected reports and their scope are identified there.
+
 ## Reading constraints
 
-The Hamiltonian lower bound is dimension sensitive and uses a different hard family from the copy lower bound. There is no joint per-instance frontier, universal depth lower bound, or claimed practical advantage. Controlled evolution and normalized block-encoding access are explicit assumptions. Finite checks support algebra and conventions; they do not prove asymptotics or certify novelty.
+The source may be mixed and energy coherent; fresh copies do not grant a preparation unitary, inverse, purification, or reflection. Repeated measurements are conditionally independent given the common latent eigenphase, with the full enlarged workspace retained in the block-encoding interface. Total interaction time sums all absolute evolution durations, including parallel experiments. Normalized block-encoding queries are a separate access model.
+
+The Hamiltonian lower bound is dimension sensitive and uses a different hard family from the copy lower bound. Pairwise hard-family transport and arbitrary-output decoding have different constants. There is no joint per-instance frontier, universal depth lower bound, or claimed practical advantage. Wasserstein accuracy controls smooth observables but does not automatically give sharp-projector or relative rare-event guarantees. The binary tolerance input adds O(b) preprocessing to the stated reconstruction cost.
+
+The coherent-source upper exponent and the standard measurement, multilevel, qubitization, projection, and adversary ingredients are credited in references/related_work.md. Finite checks support algebra and conventions; they do not prove asymptotics or certify novelty. Use the scientific chapters as the authoritative statements when an overview or learning example abbreviates a result.
