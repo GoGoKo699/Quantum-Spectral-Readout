@@ -43,7 +43,7 @@ These bounds follow directly from the Lipschitz constants, not from additional q
 
 For an output supported on $`J+1`$ grid points, one later expectation is the weighted sum of $`J+1`$ function evaluations. Thus reuse requires classical work, including the requested precision and cost of evaluating $`f`$; it requires no further quantum queries. Function-approximation error adds to the displayed Wasserstein bound.
 
-The output is source weighted. For $`\rho=I_d/d`$, the exponential integral equals the partition function divided by $`d`$. For a general source, it is $`\operatorname{Tr}[\rho e^{-\beta H}]`$. Those are different physical quantities. Reusable spectral information is an inherited motivation for classical spectral estimation, including Somma's 2019 formulation; it is not an additional novelty claim here.
+The output is source weighted. For $`\rho=I_d/d`$, the exponential integral equals the partition function divided by $`d`$. For a general source, it is $`\mathrm{Tr}[\rho e^{-\beta H}]`$. Those are different physical quantities. Reusable spectral information is an inherited motivation for classical spectral estimation, including Somma's 2019 formulation; it is not an additional novelty claim here.
 
 ## Why the lower bound has a dimension threshold
 

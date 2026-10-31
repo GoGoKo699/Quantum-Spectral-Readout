@@ -9,13 +9,13 @@ Let $`\mathcal H`$ have finite dimension $`d`$. The unknown Hermitian operator $
 For the spectral projection-valued measure $`E_H`$, define
 
 ```math
-\mu_{H,\rho}(B)=\operatorname{Tr}[\rho E_H(B)].
+\mu_{H,\rho}(B)=\mathrm{Tr}[\rho E_H(B)].
 ```
 
 Equivalently, if $`H=\sum_\lambda\lambda P_\lambda`$ with distinct energies, then
 
 ```math
-\mu_{H,\rho}=\sum_\lambda\operatorname{Tr}(\rho P_\lambda)\,\delta_\lambda.
+\mu_{H,\rho}=\sum_\lambda\mathrm{Tr}(\rho P_\lambda)\,\delta_\lambda.
 ```
 
 Degeneracies are included in $`P_\lambda`$. The task estimates the energy law weighted by the given source. It does not reconstruct the eigenvectors or the state. For $`\rho=I_d/d`$, it becomes the normalized density of states, including multiplicities.
@@ -45,7 +45,7 @@ The dual description gives one simultaneous event for all Lipschitz tests:
 ```math
 W_1(\widehat\mu,\mu_{H,\rho})\le\epsilon
 \quad\Longrightarrow\quad
-\left|\int f\,d\widehat\mu-\operatorname{Tr}[\rho f(H)]\right|
+\left|\int f\,d\widehat\mu-\mathrm{Tr}[\rho f(H)]\right|
 \le L_f\epsilon
 ```
 

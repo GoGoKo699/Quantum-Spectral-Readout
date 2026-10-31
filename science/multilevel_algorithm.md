@@ -7,7 +7,7 @@
 Let $`H`$ be a Hermitian operator on a finite-dimensional Hilbert space $`\mathcal H`$, with $`\|H\|\leq 1`$. Let $`\rho`$ be an arbitrary density operator on $`\mathcal H`$. The source supplies independent copies of this same state. We do not assume a classical description, a preparation unitary, access to a purification, an inverse preparation, or a reflection about the source. In particular, $`[H,\rho]`$ need not vanish. The target is the probability measure
 
 ```math
- \mu(B)=\operatorname{Tr}(\rho E_H(B)),\qquad B\subseteq[-1,1],
+ \mu(B)=\mathrm{Tr}(\rho E_H(B)),\qquad B\subseteq[-1,1],
 ```
 
 where $`E_H`$ denotes the spectral measure of $`H`$.
@@ -115,7 +115,7 @@ An energy $`\lambda\in[-1,1]`$ corresponds to
 $`\theta_\lambda=1/2-\lambda/4\in[1/4,3/4]`$. The known minus sign in the definition of $`V`$ is implemented as a phase on the control; it is not an additional Hamiltonian assumption. Decode a clock outcome by
 
 ```math
- g(q)=\operatorname{clip}_{[-1,1]}(2-4q),
+ g(q)=\mathrm{clip}_{[-1,1]}(2-4q),
  \qquad q=y/M.
 ```
 
@@ -169,7 +169,7 @@ The following statement formalizes both the median repetition and the coarse/fin
 
 ```math
  \Pr(y_1,\ldots,y_r)
- =\sum_\theta \operatorname{Tr}(\sigma P_\theta)
+ =\sum_\theta \mathrm{Tr}(\sigma P_\theta)
                  \prod_{i=1}^{r}p_{M_i}(y_i\mid\theta).
 ```
 
@@ -179,12 +179,12 @@ Consequently, the joint output law can be represented by drawing one latent phas
 
 ```math
  \begin{aligned}
- &\operatorname{Tr}\!\left(
+ &\mathrm{Tr}\!\left(
  K_r\cdots K_1\,\sigma\,K_1^\dagger\cdots K_r^\dagger
  \right)\\
- &\qquad=\operatorname{Tr}\!\left(
+ &\qquad=\mathrm{Tr}\!\left(
  \sigma\prod_{i=1}^{r}K_i^\dagger K_i\right)
- =\sum_\theta \operatorname{Tr}(\sigma P_\theta)
+ =\sum_\theta \mathrm{Tr}(\sigma P_\theta)
                  \prod_{i=1}^{r}|k_i(\theta)|^2,
  \end{aligned}
 ```
@@ -256,7 +256,7 @@ For any two real numbers $`u,v`$,
 The integrand is the indicator of the interval between $`u`$ and $`v`$, apart from irrelevant endpoints. Consequently,
 
 ```math
- v_\ell:=\int_{-1}^{1}\operatorname{Var}(D_\ell(x))\,dx
+ v_\ell:=\int_{-1}^{1}\mathrm{Var}(D_\ell(x))\,dx
  \leq \mathbb E|Z_\ell^{+}-Z_{\ell-1}^{-}|
  \leq C_vh_\ell,\qquad C_v=3K=195.
 ```
@@ -276,9 +276,9 @@ $`\mathbb E D_\ell=F_\ell-F_{\ell-1}`$, so
 $`\mathbb EG=F_L`$. The independent batches give the pointwise variance identity
 
 ```math
- \operatorname{Var}(G(x))
+ \mathrm{Var}(G(x))
  =\sum_{\ell=1}^{L}
-                  \frac{\operatorname{Var}(D_\ell(x))}{n_\ell}.
+                  \frac{\mathrm{Var}(D_\ell(x))}{n_\ell}.
 ```
 
 Jensen's inequality, Tonelli's theorem for the nonnegative integrands, and Cauchy–Schwarz on an interval of length two now yield
@@ -287,7 +287,7 @@ Jensen's inequality, Tonelli's theorem for the nonnegative integrands, and Cauch
  \begin{aligned}
  \mathbb E\|G-F_L\|_{L^1}
  &\leq\int_{-1}^{1}
-                \sqrt{\operatorname{Var}(G(x))}\,dx\\
+                \sqrt{\mathrm{Var}(G(x))}\,dx\\
  &\leq\left(2\sum_{\ell=1}^{L}\frac{v_\ell}{n_\ell}\right)^{1/2}.
  \end{aligned}
 ```
@@ -416,7 +416,7 @@ For a simple exact representation, let $`D=\prod_{\ell=1}^{L}n_\ell`$. This need
 
 The extra bits needed for signed intermediate values are $`O(\log L)`$, since each empirical correction CDF lies in $`[-1,1]`$. Histogram accumulation therefore takes $`O(N)`$ additions of $`O(L^2)`$-bit integers after the constants $`D/n_\ell`$ are computed. Grid indices have $`O(L)`$ bits.
 
-The projection problem is ordinary isotonic $`L^1`$ regression. First replace each $`G_j`$ by $`a_j=\operatorname{clip}_{[0,1]}G_j`$. For every feasible $`c_j`$,
+The projection problem is ordinary isotonic $`L^1`$ regression. First replace each $`G_j`$ by $`a_j=\mathrm{clip}_{[0,1]}G_j`$. For every feasible $`c_j`$,
 
 ```math
  |c_j-G_j|=|c_j-a_j|+|a_j-G_j|,
@@ -487,7 +487,7 @@ If the actual independent source copies are all copies of a fixed state $`\sigma
 
 ```math
  W_1(\mu_{H,\sigma},\mu_{H,\rho})
- \leq 2\,\operatorname{TV}(\mu_{H,\sigma},\mu_{H,\rho})
+ \leq 2\,\mathrm{TV}(\mu_{H,\sigma},\mu_{H,\rho})
  \leq\|\sigma-\rho\|_1.
 ```
 
@@ -568,7 +568,7 @@ $`C=(W+W^\dagger)/2`$. Since $`RJ=J`$,
 ```
 
 Therefore $`f(C)J=Jf(H)`$ for every function on the finite spectrum. It follows that
-$`\operatorname{Tr}[\sigma f(C)]=\operatorname{Tr}[\rho f(H)]`$.
+$`\mathrm{Tr}[\sigma f(C)]=\mathrm{Tr}[\rho f(H)]`$.
 But $`C`$ is the function $`\cos(2\pi\theta)`$ of $`W`$, proving the claimed pushforward identity.
 
 Use ordinary QPE on $`W`$ and decode by

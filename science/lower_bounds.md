@@ -9,7 +9,7 @@ This chapter gives self-contained proofs for the resource lower bounds of classi
 Let $`H=H^\dagger`$ act on a $`d`$-dimensional system, with known bound $`\|H\|\le 1`$. For a density operator $`\rho`$, define its weighted spectral measure by
 
 ```math
-\mu_{H,\rho}(B)=\operatorname{Tr}[\rho E_H(B)],
+\mu_{H,\rho}(B)=\mathrm{Tr}[\rho E_H(B)],
 ```
 
 where $`E_H`$ is the spectral projection-valued measure of $`H`$. The normalized density of states is the special case
@@ -59,7 +59,7 @@ In the coherent source model, the source is supplied by a unitary $`U_\rho`$ wit
 
 ```math
 U_\rho|0\rangle=|\Psi_\rho\rangle,\qquad
-\operatorname{Tr}_{E}|\Psi_\rho\rangle\langle\Psi_\rho|=\rho.
+\mathrm{Tr}_{E}|\Psi_\rho\rangle\langle\Psi_\rho|=\rho.
 ```
 
 Calls to $`U_\rho,U_\rho^\dagger`$, and their controlled versions are counted in $`Q_\rho`$. This model does not additionally provide free copies of the unknown $`\rho`$. Without that restriction, a lower bound on $`Q_\rho`$ alone would be false: an algorithm could use only the free copies.
@@ -257,7 +257,7 @@ Equivalently,
 
 ```math
 W=2^{-m}\sum_z\sum_j
-\operatorname{Re}\langle\psi_z|\psi_{z^{(j)}}\rangle,
+\mathrm{Re}\langle\psi_z|\psi_{z^{(j)}}\rangle,
 \tag{15}
 ```
 
@@ -403,7 +403,7 @@ Instead purify the measurements while retaining an orthogonal history register, 
 [\tau(h),\,\tau(h)+|t_h|]
 ```
 
-the history-$`h`$ branch evolves under $`\operatorname{sign}(t_h)H_z`$, with its prescribed query control and register routing. At the endpoint, apply the known unitary dilation of that branch's intervening processing and measurement, controlled on its history. Finished branches are inactive for the remaining clock interval.
+the history-$`h`$ branch evolves under $`\mathrm{sign}(t_h)H_z`$, with its prescribed query control and register routing. At the endpoint, apply the known unitary dilation of that branch's intervening processing and measurement, controlled on its history. Finished branches are inactive for the remaining clock interval.
 
 The union of these branch endpoints is a known finite schedule determined by the protocol, independent of $`z`$. At each clock value, the active generator is a direct sum over orthogonal history sectors. Each active sector has commutator norm at most $`2\delta`$, so the complete generator also has norm bound $`2\delta`$. All history updates commute with $`\Gamma`$. Thus the same integration over the common interval $`[0,T]`$ proves (25).
 
@@ -554,18 +554,18 @@ B(P_+,P_-)=\sqrt{1-4\epsilon^2}.
 
 For arbitrary classical distributions, Cauchy–Schwarz applied to
 $`(\sqrt p-\sqrt q)(\sqrt p+\sqrt q)`$ gives
-$`\operatorname{TV}(P,Q)\le\sqrt{1-B(P,Q)^2}`$. Multiplicativity and Bernoulli's inequality consequently give
+$`\mathrm{TV}(P,Q)\le\sqrt{1-B(P,Q)^2}`$. Multiplicativity and Bernoulli's inequality consequently give
 
 ```math
 \begin{aligned}
-\operatorname{TV}(P_+^{\otimes N},P_-^{\otimes N})
+\mathrm{TV}(P_+^{\otimes N},P_-^{\otimes N})
 &\le\sqrt{1-(1-4\epsilon^2)^N}\\
 &\le 2\epsilon\sqrt N.
 \end{aligned}
 \tag{36}
 ```
 
-Equal-prior binary success probability is at most $`(1+\operatorname{TV})/2`$. Success at least $`2/3`$ requires TV at least $`1/3`$, and hence
+Equal-prior binary success probability is at most $`(1+\mathrm{TV})/2`$. Success at least $`2/3`$ requires TV at least $`1/3`$, and hence
 
 ```math
 N_\rho\ge\frac1{36\epsilon^2}.
@@ -590,7 +590,7 @@ A(\theta)=
 On the two-dimensional active source subspace and one environment qubit, let
 
 ```math
-U_\pm=\operatorname{CNOT}\,(A(\theta_\pm)\otimes I).
+U_\pm=\mathrm{CNOT}\,(A(\theta_\pm)\otimes I).
 \tag{38}
 ```
 
@@ -694,7 +694,7 @@ Ordering both spectra gives
 ```math
 W_1(\nu_\tau,\nu_\sigma)
 =\sum_i|\lambda_i(\tau)-\lambda_i(\sigma)|
-=2\,\operatorname{TV}(\lambda(\tau),\lambda(\sigma)).
+=2\,\mathrm{TV}(\lambda(\tau),\lambda(\sigma)).
 \tag{45}
 ```
 
@@ -711,7 +711,7 @@ Then
 ```math
 W_1(\mu_{H_\tau},\mu_{H_\sigma})
 =\frac1M\|\lambda(\tau)-\lambda(\sigma)\|_1
-=\frac2M\operatorname{TV}(\lambda(\tau),\lambda(\sigma)).
+=\frac2M\mathrm{TV}(\lambda(\tau),\lambda(\sigma)).
 \tag{47}
 ```
 

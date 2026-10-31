@@ -7,7 +7,7 @@ Full spectral readout has two independent inputs: a source state and access to i
 Every upper bound below returns a finite classical probability measure approximating
 
 ```math
-\mu_{H,\rho}(B)=\operatorname{Tr}[\rho E_H(B)],
+\mu_{H,\rho}(B)=\mathrm{Tr}[\rho E_H(B)],
 \qquad \|H\|\leq1,
 ```
 
@@ -119,7 +119,7 @@ The measure is classical and has $`O(\epsilon^{-1})`$ support points. This gener
 
 The distribution learner invokes [van Apeldoorn's multidimensional amplitude estimation](https://doi.org/10.4230/LIPIcs.TQC.2021.9). Definition 1 permits arbitrary normalized garbage and explicitly assumes controlled forward/inverse probability-oracle calls. With total probability mass one and constant failure probability, Theorem 9 gives approximately inverse-linear oracle cost and $`\widetilde O(q/\alpha^2)`$ additional two-qubit gates for coordinate accuracy $`\alpha`$, where $`q`$ is the oracle register size.
 
-In the dyadic Wasserstein construction, $`\alpha=\epsilon/\operatorname{polylog}(1/\epsilon)`$. Thus an ordinary implementation can use $`\widetilde O(q\epsilon^{-2})`$ additional gates. QRAM is not necessary for the table's query exponents. This gate count is separate from the cost of executing each source or Hamiltonian oracle call.
+In the dyadic Wasserstein construction, $`\alpha=\epsilon/\mathrm{polylog}(1/\epsilon)`$. Thus an ordinary implementation can use $`\widetilde O(q\epsilon^{-2})`$ additional gates. QRAM is not necessary for the table's query exponents. This gate count is separate from the cost of executing each source or Hamiltonian oracle call.
 
 If source preparation is expensive, its coherent-query advantage may matter, but its inverse and coherent controls must actually be available. If only physical source specimens are supplied, the coherent row is not an admissible replacement. The [model](model.md) states these interfaces independently rather than treating a source copy as a reversible circuit.
 
