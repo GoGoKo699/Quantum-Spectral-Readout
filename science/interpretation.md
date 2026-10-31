@@ -43,7 +43,7 @@ These bounds follow directly from the Lipschitz constants, not from additional q
 
 For an output supported on $`J+1`$ grid points, one later expectation is the weighted sum of $`J+1`$ function evaluations. Thus reuse requires classical work, including the requested precision and cost of evaluating $`f`$; it requires no further quantum queries. Function-approximation error adds to the displayed Wasserstein bound.
 
-The output is source weighted. For $`\rho=I_d/d`$, the exponential integral equals the partition function divided by $`d`$. For a general source, it is $`\operatorname{Tr}[\rho e^{-\beta H}]`$. Those are different physical quantities. Reusable spectral information is an inherited motivation for classical spectral estimation, including Somma's 2019 formulation; it is not an additional novelty claim here.
+The output is source weighted. For $`\rho=I_d/d`$, the exponential integral equals the partition function divided by $`d`$. For a general source, it is $`\mathrm{Tr}[\rho e^{-\beta H}]`$. Those are different physical quantities. Reusable spectral information is an inherited motivation for classical spectral estimation, including Somma's 2019 formulation; it is not an additional novelty claim here.
 
 ## Why the lower bound has a dimension threshold
 
@@ -62,7 +62,7 @@ The source-copy lower bound uses a separate family: two nearby unknown weights o
 
 ## Physical energy units and normalization
 
-Suppose a physical Hamiltonian $`A`$ has known bound $`\|A\|\le B`$ with $`B>0`$, and the desired Wasserstein error in energy units is $`\Delta`$. Set $`H=A/B`$ and $`\epsilon=\Delta/B`$, in the theorem's regime $`0<\Delta/B\le1/4`$. Pushing the returned measure forward by multiplication by $`B`$ gives physical error at most $`\Delta`$.
+Suppose a physical Hamiltonian $`A`$ has known bound $`\|A\|\le B`$ with $`B\gt 0`$, and the desired Wasserstein error in energy units is $`\Delta`$. Set $`H=A/B`$ and $`\epsilon=\Delta/B`$, in the theorem's regime $`0\lt \Delta/B\le1/4`$. Pushing the returned measure forward by multiplication by $`B`$ gives physical error at most $`\Delta`$.
 
 For evolution access, a normalized call $`e^{-itH}`$ is a physical call $`e^{-i(t/B)A}`$. In units with $`\hbar=1`$, the achieved scalings become
 
@@ -74,7 +74,7 @@ T_{\rm physical}
 
 with $`O(\Delta^{-1})`$ maximum interaction time per retained specimen. This is a unit conversion, not a free physical amplification of the Hamiltonian. An implementation may have overhead that depends on duration, requested accuracy, system size, or control strength.
 
-For a supplied block encoding of $`A/\alpha`$, the query bound instead uses $`\epsilon=\Delta/\alpha`$ in the regime $`0<\Delta/\alpha\le1/4`$ and becomes $`O((\alpha/\Delta)^2\log^3(\alpha/\Delta))`$. Query cost and physical interaction time are distinct. The comparison with density-operator spectrum lower bounds depends critically on this normalization; [Lower bounds, Section 10](lower_bounds.md#10-detailed-comparison-with-wangs-2026-spectrum-lower-bound) works through it explicitly.
+For a supplied block encoding of $`A/\alpha`$, the query bound instead uses $`\epsilon=\Delta/\alpha`$ in the regime $`0\lt \Delta/\alpha\le1/4`$ and becomes $`O((\alpha/\Delta)^2\log^3(\alpha/\Delta))`$. Query cost and physical interaction time are distinct. The comparison with density-operator spectrum lower bounds depends critically on this normalization; [Lower bounds, Section 10](lower_bounds.md#10-detailed-comparison-with-wangs-2026-spectrum-lower-bound) works through it explicitly.
 
 ## Boundaries of the claim
 

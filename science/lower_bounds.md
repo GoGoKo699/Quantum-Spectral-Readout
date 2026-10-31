@@ -9,7 +9,7 @@ This chapter gives self-contained proofs for the resource lower bounds of classi
 Let $`H=H^\dagger`$ act on a $`d`$-dimensional system, with known bound $`\|H\|\le 1`$. For a density operator $`\rho`$, define its weighted spectral measure by
 
 ```math
-\mu_{H,\rho}(B)=\operatorname{Tr}[\rho E_H(B)],
+\mu_{H,\rho}(B)=\mathrm{Tr}[\rho E_H(B)],
 ```
 
 where $`E_H`$ is the spectral projection-valued measure of $`H`$. The normalized density of states is the special case
@@ -20,9 +20,10 @@ where $`E_H`$ is the spectral projection-valued measure of $`H`$. The normalized
 
 The estimator must return a classical probability measure $`\widehat\mu`$ satisfying
 
+**(1)**
+
 ```math
 \Pr\!\left[W_1(\widehat\mu,\mu_{H,\rho})\le\epsilon\right]\ge\frac23
-\tag{1}
 ```
 
 on every allowed input. The output may have arbitrary support, weights, and representation. Its meaning and subsequent classical processing cannot depend on further uncharged calls to the input oracles. An instruction to sample from the still-unknown Hamiltonian is not a classical approximation already returned by the algorithm.
@@ -59,14 +60,14 @@ In the coherent source model, the source is supplied by a unitary $`U_\rho`$ wit
 
 ```math
 U_\rho|0\rangle=|\Psi_\rho\rangle,\qquad
-\operatorname{Tr}_{E}|\Psi_\rho\rangle\langle\Psi_\rho|=\rho.
+\mathrm{Tr}_{E}|\Psi_\rho\rangle\langle\Psi_\rho|=\rho.
 ```
 
 Calls to $`U_\rho,U_\rho^\dagger`$, and their controlled versions are counted in $`Q_\rho`$. This model does not additionally provide free copies of the unknown $`\rho`$. Without that restriction, a lower bound on $`Q_\rho`$ alone would be false: an algorithm could use only the free copies.
 
 ### 1.4 The lower bounds
 
-For universal positive constants and $`0<\epsilon\le 1/256`$:
+For universal positive constants and $`0\lt \epsilon\le 1/256`$:
 
 | Charged resource | Lower bound | Hard input and additional power allowed |
 |---|---:|---|
@@ -81,19 +82,21 @@ The four entries are separate coordinatewise minimax statements. They do not est
 
 ## 2. An ordered spectral hypercube in every dimension
 
-Fix $`d\ge1`$ and $`0<\epsilon\le1/256`$. Set
+Fix $`d\ge1`$ and $`0\lt \epsilon\le1/256`$. Set
+
+**(2)**
 
 ```math
 \delta=32\epsilon,\qquad
 m=\min\!\left\{d,\left\lfloor\frac1{256\epsilon}\right\rfloor\right\}.
-\tag{2}
 ```
 
 Thus $`m\ge1`$, $`m\delta\le1/8`$, and
 
+**(3)**
+
 ```math
 m\ge\frac1{512}\min\{d,\epsilon^{-1}\}.
-\tag{3}
 ```
 
 For the last inequality, use $`\lfloor x\rfloor\ge x/2`$ when $`x\ge1`$, followed by $`\min\{d,a/256\}\ge\min\{d,a\}/256`$.
@@ -107,37 +110,41 @@ r_j\in\{\lfloor d/m\rfloor,\lceil d/m\rceil\},\qquad
 
 Let $`P_j`$ denote the corresponding orthogonal projectors and $`w_j=r_j/d`$. Then
 
+**(4)**
+
 ```math
 \sum_j P_j=I_d,\qquad \sum_jw_j=1,\qquad
 w_j\ge\frac1{2m}.
-\tag{4}
 ```
 
 Indeed, $`d/m\ge1`$ and $`\lfloor d/m\rfloor\ge d/(2m)`$.
 
 For $`z=(z_1,\ldots,z_m)\in\{-1,+1\}^m`$, define
 
+**(5)**
+
 ```math
 b_j=4\delta\left(j-\frac{m+1}{2}\right),\qquad
 \lambda_j(z)=b_j+\delta z_j,\qquad
 H_z=\sum_{j=1}^m\lambda_j(z)P_j.
-\tag{5}
 ```
 
 These Hamiltonians obey stronger bounds than the task requires:
 
+**(6)**
+
 ```math
 \|H_z\|\le (2m-1)\delta\le\frac14,
 \qquad
-\lambda_{j+1}(z)-\lambda_j(z)\ge2\delta>0.
-\tag{6}
+\lambda_{j+1}(z)-\lambda_j(z)\ge2\delta\gt 0.
 ```
 
 In particular, the spectral order is the same for every $`z`$. Their normalized spectral measures are
 
+**(7)**
+
 ```math
 \mu_z=\mu_{H_z}=\sum_{j=1}^m w_j\delta_{\lambda_j(z)}.
-\tag{7}
 ```
 
 All $`P_j,w_j,b_j,\delta`$, and the family itself may be disclosed to the algorithm. Only $`z`$ is hidden. Disclosure can only strengthen the algorithm, and demonstrates that the hardness does not rely on learning an unknown eigenbasis.
@@ -146,11 +153,12 @@ All $`P_j,w_j,b_j,\delta`$, and the family itself may be disclosed to the algori
 
 Because the atoms have fixed order and fixed masses, quantile coupling gives
 
+**(8)**
+
 ```math
 W_1(\mu_z,\mu_{z'})
 =\sum_jw_j|\lambda_j(z)-\lambda_j(z')|
 =2\delta\sum_jw_j\mathbf1\{z_j\ne z'_j\}.
-\tag{8}
 ```
 
 For equal masses this is $`2\delta\,d_{\mathrm H}(z,z')/m`$.
@@ -169,18 +177,21 @@ W_1(c_\#\widehat\mu,\mu_z)\le W_1(\widehat\mu,\mu_z).
 
 We may therefore assume all outputs are supported on $`[-1,1]`$. This also ensures finite quantile integrals on failure outcomes. Any invalid failure output can be replaced by $`\delta_0`$.
 
-For a probability measure $`\nu`$ on the line, let $`q_\nu(u)=F_\nu^{-1}(u)`$, $`0<u<1`$, be its generalized quantile. The standard one-dimensional transport identities are
+For a probability measure $`\nu`$ on the line, let $`q_\nu(u)=F_\nu^{-1}(u)`$, $`0\lt u\lt 1`$, be its generalized quantile. The standard one-dimensional transport identities are
+
+**(9)**
 
 ```math
 W_1(\nu,\mu)
 =\int_0^1|q_\nu(u)-q_\mu(u)|\,du
 =\int_{\mathbb R}|F_\nu(t)-F_\mu(t)|\,dt.
-\tag{9}
 ```
 
 For completeness, $`|x-y|=\int|\mathbf1\{x\le t\}-\mathbf1\{y\le t\}|dt`$. Every coupling consequently has expected cost at least the CDF integral. In the coupling $`X=q_\nu(U),Y=q_\mu(U)`$ with common uniform $`U`$, the two threshold events are nested at every $`t`$, so equality holds. This proves both formulas. The underlying identity is classical; see Vallender [R1].
 
 Write $`s_j=\sum_{k\le j}w_k`$, $`s_0=0`$. Define the output quantile centroids
+
+**(10)**
 
 ```math
 \widehat q_j=\frac1{w_j}\int_{s_{j-1}}^{s_j}q_{\widehat\mu}(u)\,du,
@@ -188,14 +199,15 @@ Write $`s_j=\sum_{k\le j}w_k`$, $`s_0=0`$. Define the output quantile centroids
 \widehat z_j=
 \begin{cases}
 +1,&\widehat q_j\ge b_j,\\
--1,&\widehat q_j<b_j.
+-1,&\widehat q_j\lt b_j.
 \end{cases}
-\tag{10}
 ```
 
 This is a mathematical postprocessing of the returned classical measure. It need not be computationally efficient, because the lower bound grants unrestricted classical processing. The plus sign at equality fixes an otherwise arbitrary tie rule.
 
 On the interval $`(s_{j-1},s_j)`$, the true quantile is the constant $`\lambda_j(z)`$. Jensen's inequality and the midpoint threshold imply
+
+**(11)**
 
 ```math
 \begin{aligned}
@@ -206,27 +218,28 @@ W_1(\widehat\mu,\mu_z)
 &\ge\delta\sum_jw_j\mathbf1\{\widehat z_j\ne z_j\}\\
 &\ge\frac{\delta}{2m}\,d_{\mathrm H}(\widehat z,z).
 \end{aligned}
-\tag{11}
 ```
 
 The middle inequality holds because a centroid on the wrong side of the midpoint $`b_j`$ is at least $`\delta`$ away from the true atom $`b_j+\delta z_j`$. It remains valid at a tie.
 
 Thus every successful output in (1) satisfies
 
+**(12)**
+
 ```math
 d_{\mathrm H}(\widehat z,z)
 \le\frac{2m\epsilon}{\delta}
 =\frac m{16}.
-\tag{12}
 ```
 
 The error count is always at most $`m`$. Since the success probability is at least $`2/3`$ on every input,
+
+**(13)**
 
 ```math
 \mathbb E[d_{\mathrm H}(\widehat z,z)\mid z]
 \le\frac23\frac m{16}+\frac13m
 =\frac{3m}{8}.
-\tag{13}
 ```
 
 This converts spectral estimation to approximate oracle interrogation, a standard query-complexity task [R2]. Crucially, it does not assume that the algorithm outputs a member of the hard family.
@@ -246,19 +259,21 @@ Equation (13) gives $`\bar e\le3/8`$.
 
 Introduce an auxiliary input-label register with computational basis $`|z\rangle`$, and let $`X_j`$ flip its $`j`$th bit. This register is only a proof device. Define
 
+**(14)**
+
 ```math
 \Gamma=\sum_{j=1}^mX_j,\qquad
 |\Omega\rangle=2^{-m/2}\sum_z|z\rangle|\psi_z\rangle,\qquad
 W=\langle\Omega|(\Gamma\otimes I)|\Omega\rangle.
-\tag{14}
 ```
 
 Equivalently,
 
+**(15)**
+
 ```math
 W=2^{-m}\sum_z\sum_j
-\operatorname{Re}\langle\psi_z|\psi_{z^{(j)}}\rangle,
-\tag{15}
+\mathrm{Re}\langle\psi_z|\psi_{z^{(j)}}\rangle,
 ```
 
 where $`z^{(j)}`$ flips bit $`j`$. Both orientations of each hypercube edge appear in (15); this convention gives $`W_{\rm init}=m`$, not $`m/2`$. The initial state is independent of $`z`$, and every input-independent operation preserves $`W`$.
@@ -267,41 +282,45 @@ where $`z^{(j)}`$ flips bit $`j`$. Both orientations of each hypercube edge appe
 
 Consider an edge $`z,z^{(j)}`$, and set $`a=e_{zj}`$, $`b=e_{z^{(j)},j}`$. Applying the final binary bit-decoder measurement to the two states gives
 
+**(16)**
+
 ```math
 |\langle\psi_z|\psi_{z^{(j)}}\rangle|
 \le \sqrt{a(1-b)}+\sqrt{b(1-a)}.
-\tag{16}
 ```
 
 This is the elementary fidelity data-processing bound. It can also be proved directly: split the inner product using the two POVM elements $`E,I-E`$, apply the triangle inequality, and then Cauchy–Schwarz separately to the vectors obtained by applying $`\sqrt E`$ and $`\sqrt{I-E}`$.
 
 Put $`s=(a+b)/2`$. A second Cauchy–Schwarz inequality gives
 
+**(17)**
+
 ```math
 \sqrt{a(1-b)}+\sqrt{b(1-a)}
 \le \sqrt{(a+b)(2-a-b)}
 =g(s),\qquad
 g(s)=2\sqrt{s(1-s)}.
-\tag{17}
 ```
 
 The function $`g`$ is concave on all of $`[0,1]`$. Averaging over oriented edges gives mean $`s=\bar e`$, since the bit-flip map permutes the inputs. Hence
+
+**(18)**
 
 ```math
 W_{\rm final}
 \le m\,g(\bar e)
 \le m\,g(3/8)
 =\frac{\sqrt{15}}4m.
-\tag{18}
 ```
 
-Jensen's inequality is valid even if some individual edges have $`s>1/2`$. Monotonicity of $`g`$ is used only after averaging, at $`\bar e\le3/8<1/2`$.
+Jensen's inequality is valid even if some individual edges have $`s\gt 1/2`$. Monotonicity of $`g`$ is used only after averaging, at $`\bar e\le3/8\lt 1/2`$.
 
 Define
 
+**(19)**
+
 ```math
-\kappa=1-\frac{\sqrt{15}}4>0.
-\tag{19}
+\kappa=1-\frac{\sqrt{15}}4\gt 0.
 ```
 
 Every successful spectral estimator must decrease progress by at least $`\kappa m`$.
@@ -312,23 +331,25 @@ This is a standard positive-weight adversary argument [R3]. The continuous-time 
 
 For the hard family, the input-labelled Hamiltonian is
 
+**(20)**
+
 ```math
 \mathcal G
 =\sum_z|z\rangle\langle z|\otimes H_z
 =I\otimes\sum_j b_jP_j+\delta\sum_jZ_j\otimes P_j,
-\tag{20}
 ```
 
 where $`Z_j|z\rangle=z_j|z\rangle`$.
 
 The known baseline term commutes with $`\Gamma`$. In each orthogonal physical block $`P_j`$, only $`X_j`$ fails to commute with the unknown term. Therefore
 
+**(21)**
+
 ```math
 [\Gamma\otimes I,\mathcal G]
 =\delta\sum_j[X_j,Z_j]\otimes P_j,
 \qquad
 \|[\Gamma\otimes I,\mathcal G]\|=2\delta.
-\tag{21}
 ```
 
 Tensoring unused ancillas does not change this norm.
@@ -337,20 +358,22 @@ Tensoring unused ancillas does not change this norm.
 
 Consider a continuous computation whose physical Hamiltonian is an arbitrary input-independent driver plus oracle interactions. An allowed oracle term has the form
 
+**(22)**
+
 ```math
 a_\ell(s)V_\ell(s)^\dagger
 \bigl(C_\ell(s)\otimes H_z^{(\ell)}\bigr)V_\ell(s),
-\tag{22}
 ```
 
 where $`a_\ell(s)`$ is real, $`C_\ell(s)`$ is a known Hermitian control contraction on registers separate from the queried system, and $`V_\ell(s)`$ is input independent. The query may be routed to any system register. Its rate is charged $`|a_\ell(s)|`$; $`C_\ell`$ may be absorbed into the normalization so that $`\|C_\ell\|\le1`$.
 
 This model allows turning queries off, controlled evolution, sign reversal, arbitrary known conjugations, and simultaneous interactions. Input-independent drivers and pulses commute with $`\Gamma`$ on the label register. Equation (21), invariance under known conjugations, and the triangle inequality imply
 
+**(23)**
+
 ```math
 \left|\frac{dW}{ds}\right|
 \le2\delta\sum_\ell|a_\ell(s)|.
-\tag{23}
 ```
 
 Integrating and charging
@@ -361,28 +384,31 @@ T=\int\sum_\ell|a_\ell(s)|\,ds
 
 gives
 
+**(24)**
+
 ```math
 W_{\rm init}-W_{\rm final}\le2\delta T.
-\tag{24}
 ```
 
 Consequently,
 
+**(25)**
+
 ```math
 T\ge\frac{\kappa m}{2\delta}
 =\Omega\!\left(\frac{\min\{d,\epsilon^{-1}\}}{\epsilon}\right).
-\tag{25}
 ```
 
 No restriction on the strength of the input-independent driver was used. The unknown interaction strength, including any externally amplified coefficient, must be charged through its absolute rate.
 
 For a single discrete evolution call, the same bound can be seen without differentiation: along an edge $`z,z^{(j)}`$, the affected physical block changes by
 
+**(26)**
+
 ```math
 |e^{-it(b_j+\delta)}-e^{-it(b_j-\delta)}|
 =2|\sin(\delta t)|
 \le2\delta|t|.
-\tag{26}
 ```
 
 The commutator again has only that one active bit in each physical block. Long evolution, inverse evolution, and controls cannot evade the bound.
@@ -403,7 +429,7 @@ Instead purify the measurements while retaining an orthogonal history register, 
 [\tau(h),\,\tau(h)+|t_h|]
 ```
 
-the history-$`h`$ branch evolves under $`\operatorname{sign}(t_h)H_z`$, with its prescribed query control and register routing. At the endpoint, apply the known unitary dilation of that branch's intervening processing and measurement, controlled on its history. Finished branches are inactive for the remaining clock interval.
+the history-$`h`$ branch evolves under $`\mathrm{sign}(t_h)H_z`$, with its prescribed query control and register routing. At the endpoint, apply the known unitary dilation of that branch's intervening processing and measurement, controlled on its history. Finished branches are inactive for the remaining clock interval.
 
 The union of these branch endpoints is a known finite schedule determined by the protocol, independent of $`z`$. At each clock value, the active generator is a direct sum over orthogonal history sectors. Each active sector has commutator norm at most $`2\delta`$, so the complete generator also has norm bound $`2\delta`$. All history updates commute with $`\Gamma`$. Thus the same integration over the common interval $`[0,T]`$ proves (25).
 
@@ -429,26 +455,30 @@ The theorem therefore does not attribute the Hamiltonian-time obstruction to a d
 
 Define the real two-by-two matrix
 
+**(27)**
+
 ```math
 R(h)=
 \begin{pmatrix}
 h&\sqrt{1-h^2}\\
 \sqrt{1-h^2}&-h
 \end{pmatrix},
-\qquad |h|<1.
-\tag{27}
+\qquad |h|\lt 1.
 ```
 
 It satisfies $`R(h)^\dagger=R(h)`$ and $`R(h)^2=I_2`$. Give the algorithm the unitary
 
+**(28)**
+
 ```math
 U_z=\sum_{j=1}^m R(\lambda_j(z))\otimes P_j.
-\tag{28}
 ```
 
 The first register is a single block-encoding ancilla. Its upper-left block is $`H_z`$, so this is an exact normalized block encoding. Moreover, $`U_z^\dagger=U_z`$.
 
 The derivative is
+
+**(29)**
 
 ```math
 R'(h)=
@@ -458,7 +488,6 @@ R'(h)=
 \end{pmatrix},
 \qquad
 R'(h)^2=\frac1{1-h^2}I_2.
-\tag{29}
 ```
 
 Hence
@@ -470,24 +499,28 @@ Hence
 
 All interpolation points between $`b_j-\delta`$ and $`b_j+\delta`$ lie in this interval. Integration gives
 
+**(30)**
+
 ```math
 \|R(b_j+\delta)-R(b_j-\delta)\|
 \le\frac{4\delta}{\sqrt3}.
-\tag{30}
 ```
 
 The unused square-root block changes only by the same weak amount. There is no uncharged strong bit in the oracle completion.
 
 Let $`\mathcal U=\sum_z|z\rangle\langle z|\otimes U_z`$. In physical block $`P_j`$, the oracle depends only on $`z_j`$. Therefore
 
+**(31)**
+
 ```math
 \|[\Gamma\otimes I,\mathcal U]\|
 =\max_j\|R(b_j+\delta)-R(b_j-\delta)\|
 \le\frac{4\delta}{\sqrt3}.
-\tag{31}
 ```
 
 One query changes progress by at most this norm:
+
+**(32)**
 
 ```math
 \begin{aligned}
@@ -497,17 +530,17 @@ One query changes progress by at most this norm:
 -(\Gamma\otimes I)|\Omega\rangle\right|\\
 &\le\|[\Gamma\otimes I,\mathcal U]\|.
 \end{aligned}
-\tag{32}
 ```
 
 Controlled calls add an identity block and do not increase the norm. Inverse calls are the same oracle on this family. Query choices based on measured history can be coherently controlled on the retained history register. A hard cap of $`Q_H`$ queries can be padded with inactive controlled calls.
 
 The required progress gap now gives
 
+**(33)**
+
 ```math
 Q_H\ge\frac{\kappa\sqrt3\,m}{4\delta}
 =\Omega\!\left(\frac{\min\{d,\epsilon^{-1}\}}{\epsilon}\right).
-\tag{33}
 ```
 
 If multiple queries occur in parallel, each is charged and the same bound follows by telescoping over them. The result concerns a generic block-encoding interface. A different input promise that exposes extra strong information in another oracle block is a different access model and is not covered by declaring its cost to be one generic block query.
@@ -522,18 +555,20 @@ H_*=-|0\rangle\langle0|+|1\rangle\langle1|
 
 with zero action on the remaining subspace, which is never populated. Let
 
+**(34)**
+
 ```math
 \rho_\pm=
 \left(\frac12\pm\epsilon\right)|0\rangle\langle0|
 +\left(\frac12\mp\epsilon\right)|1\rangle\langle1|.
-\tag{34}
 ```
 
 The two spectral measures have distance
 
+**(35)**
+
 ```math
 W_1(\mu_{H_*,\rho_+},\mu_{H_*,\rho_-})=4\epsilon,
-\tag{35}
 ```
 
 because a mass $`2\epsilon`$ moves across distance $`2`$. Their means are respectively $`-2\epsilon`$ and $`+2\epsilon`$.
@@ -554,22 +589,24 @@ B(P_+,P_-)=\sqrt{1-4\epsilon^2}.
 
 For arbitrary classical distributions, Cauchy–Schwarz applied to
 $`(\sqrt p-\sqrt q)(\sqrt p+\sqrt q)`$ gives
-$`\operatorname{TV}(P,Q)\le\sqrt{1-B(P,Q)^2}`$. Multiplicativity and Bernoulli's inequality consequently give
+$`\mathrm{TV}(P,Q)\le\sqrt{1-B(P,Q)^2}`$. Multiplicativity and Bernoulli's inequality consequently give
+
+**(36)**
 
 ```math
 \begin{aligned}
-\operatorname{TV}(P_+^{\otimes N},P_-^{\otimes N})
+\mathrm{TV}(P_+^{\otimes N},P_-^{\otimes N})
 &\le\sqrt{1-(1-4\epsilon^2)^N}\\
 &\le 2\epsilon\sqrt N.
 \end{aligned}
-\tag{36}
 ```
 
-Equal-prior binary success probability is at most $`(1+\operatorname{TV})/2`$. Success at least $`2/3`$ requires TV at least $`1/3`$, and hence
+Equal-prior binary success probability is at most $`(1+\mathrm{TV})/2`$. Success at least $`2/3`$ requires TV at least $`1/3`$, and hence
+
+**(37)**
 
 ```math
 N_\rho\ge\frac1{36\epsilon^2}.
-\tag{37}
 ```
 
 Arbitrary joint measurements, source retention, and unlimited operations involving the known $`H_*`$ cannot increase this input distinguishability. Adaptive protocols with a hard copy cap are covered by padding with unused copies. This is the standard two-point sampling obstruction, not a new quantum copy lower-bound technique.
@@ -589,12 +626,13 @@ A(\theta)=
 
 On the two-dimensional active source subspace and one environment qubit, let
 
+**(38)**
+
 ```math
-U_\pm=\operatorname{CNOT}\,(A(\theta_\pm)\otimes I).
-\tag{38}
+U_\pm=\mathrm{CNOT}\,(A(\theta_\pm)\otimes I).
 ```
 
-Extend these unitaries by the identity outside the active source subspace when $`d>2`$. Then
+Extend these unitaries by the identity outside the active source subspace when $`d\gt 2`$. Then
 
 ```math
 U_\pm|00\rangle
@@ -606,39 +644,43 @@ which is a purification of $`\rho_\pm`$. This specifies the whole unitary, not j
 
 Let $`\Delta_\theta=\arcsin(2\epsilon)`$. The oracle difference is exactly
 
+**(39)**
+
 ```math
 \|U_+-U_-\|=2\sin(\Delta_\theta/2).
-\tag{39}
 ```
 
-For $`0<\epsilon\le1/4`$,
+For $`0\lt \epsilon\le1/4`$,
+
+**(40)**
 
 ```math
 2\sin(\Delta_\theta/2)
 \le\Delta_\theta
 \le\frac{2\epsilon}{\sqrt{1-4\epsilon^2}}
 \le\frac{4\epsilon}{\sqrt3}.
-\tag{40}
 ```
 
 The same difference norm holds for inverse calls, and does not increase for controlled calls. One may even grant a direct selector between forward, inverse, and inactive queries at the same cost: its difference norm is the maximum of these three blocks.
 
 A standard hybrid argument shows that after $`Q_\rho`$ queries, the Euclidean distance between purifications of the two final algorithm states is at most
 
+**(41)**
+
 ```math
 Q_\rho\|U_+-U_-\|.
-\tag{41}
 ```
 
 Indeed, replace the calls one at a time; each replacement changes the final state vector by at most the oracle difference norm, while all surrounding unitaries preserve norm. Purified adaptivity and unused-query padding are allowed.
 
 The trace distance of two pure states is no larger than their Euclidean vector distance. Therefore the output distributions can have TV at most the right-hand side of (41). The same binary-decision reduction used above requires TV at least $`1/3`$, giving
 
+**(42)**
+
 ```math
 Q_\rho
 \ge\frac1{6\sin(\tfrac12\arcsin(2\epsilon))}
 \ge\frac{\sqrt3}{12\epsilon}.
-\tag{42}
 ```
 
 The source is the only input that varies in this proof; $`H_*`$ is fully known. Every use of an unknown source copy must enter through a counted preparation call. The result is the usual coherent amplitude-estimation lower exponent, provided here with a complete weak oracle so that uncontrolled parts of a purification unitary cannot supply extra information. General sample-to-query lifting also supplies this exponent [R6].
@@ -661,16 +703,19 @@ The proof does not establish a universal depth lower bound, a benefit or impossi
 
 Wang's revised *A Unified Complexity Framework for Quantum Property Testing*, arXiv:2608.02600v4, is an essential related result [R5]. Theorem 5.15 gives a sample lower bound for learning the ordered eigenvalue vector of a density operator $`\tau`$ in total variation error $`\eta`$:
 
+**(43)**
+
 ```math
 S_W(d,\eta)
 =\Omega\!\left(
 \frac{d^2}{
 \eta^2\log^2d\,\max\{1,\eta^2\log^2d\}}
 \right).
-\tag{43}
 ```
 
 The spectrum bound follows there by reduction from estimating trace distance to $`I_d/d`$. The paper's Section 1.2 defines coherent query access as a unitary preparing a purification of $`\tau`$. Combining its hard binary distinction with purified sample-to-query lifting yields
+
+**(44)**
 
 ```math
 Q_W(d,\eta)
@@ -678,7 +723,6 @@ Q_W(d,\eta)
 \frac{d}{
 \eta\log d\,\sqrt{\max\{1,\eta^2\log^2d\}}}
 \right).
-\tag{44}
 ```
 
 For $`\eta\log d\le1`$, this is $`\Omega(d/(\eta\log d))`$.
@@ -691,28 +735,31 @@ The output metrics are related by an exact identity. For density operators $`\ta
 
 Ordering both spectra gives
 
+**(45)**
+
 ```math
 W_1(\nu_\tau,\nu_\sigma)
 =\sum_i|\lambda_i(\tau)-\lambda_i(\sigma)|
-=2\,\operatorname{TV}(\lambda(\tau),\lambda(\sigma)).
-\tag{45}
+=2\,\mathrm{TV}(\lambda(\tau),\lambda(\sigma)).
 ```
 
 For a positive normalization $`M`$, consider a promised family satisfying
 $`\|d\tau-I\|\le M`$, and set
 
+**(46)**
+
 ```math
 H_\tau=\frac{d\tau-I}{M}.
-\tag{46}
 ```
 
 Then
 
+**(47)**
+
 ```math
 W_1(\mu_{H_\tau},\mu_{H_\sigma})
 =\frac1M\|\lambda(\tau)-\lambda(\sigma)\|_1
-=\frac2M\operatorname{TV}(\lambda(\tau),\lambda(\sigma)).
-\tag{47}
+=\frac2M\mathrm{TV}(\lambda(\tau),\lambda(\sigma)).
 ```
 
 Thus an output-metric mismatch does not explain the difference between the results.
@@ -733,10 +780,11 @@ The relevant purified access in [R5,R6] supplies $`U_\tau|0\rangle=|\Psi_\tau\ra
 
 In the evolution picture the required rescaling is explicit:
 
+**(48)**
+
 ```math
 e^{-itH_\tau}
 =e^{it/M}\,e^{-i\tau\,dt/M}.
-\tag{48}
 ```
 
 The scalar phase is known and can be implemented on the control. The unknown density-operator interaction has duration $`d|t|/M`$. A standard block-encoding simulation therefore incurs the factor $`d/M`$ in its time-dependent query cost, in addition to its precision/call overhead.
@@ -754,12 +802,13 @@ The lifting corollary itself states its domain precisely. Corollary 1.2 of Chen�
 
 For the strongest possible test of a direct transfer, grant that the relevant Wang hard distinction also has the promise in (46). Even granting ideal simulation with query cost proportional to $`dT/M`$, substitution into (44) gives only
 
+**(49)**
+
 ```math
 T=\Omega\!\left(
 \frac{M}{
 \eta\log d\,\sqrt{\max\{1,\eta^2\log^2d\}}}
 \right).
-\tag{49}
 ```
 
 With $`\eta=\Theta(M\epsilon_H)`$, the leading ratio $`M/\eta`$ becomes $`\Theta(1/\epsilon_H)`$. The factor $`d`$ has cancelled. Actual simulation overhead cannot strengthen this simple inference.

@@ -5,7 +5,7 @@
 Given a Hermitian operator $`H`$ with $`\|H\|\le1`$ and a source state $`\rho`$, the target is the complete source-weighted energy law
 
 ```math
-\mu_{H,\rho}(B)=\operatorname{Tr}[\rho E_H(B)].
+\mu_{H,\rho}(B)=\mathrm{Tr}[\rho E_H(B)].
 ```
 
 The source may be mixed and may have coherence between different energies. The algorithm receives fresh independent copies; it needs no source-preparation unitary, inverse, purification, or reflection. It returns a finite classical probability measure $`\widehat\mu`$ whose Wasserstein distance from the true law is at most $`\epsilon`$, with probability at least $`2/3`$.
@@ -14,7 +14,7 @@ The source may be mixed and may have coherence between different energies. The a
 
 The protocol uses repeated phase measurements on each retained specimen to couple coarse and fine energy estimates. A multilevel estimator combines those pairs, and an exact isotonic projection converts its signed intermediate output into normalized, nonnegative probabilities.
 
-For rational $`0<\epsilon\le1/4`$, the proved upper bounds are:
+For rational $`0\lt \epsilon\le1/4`$, the proved upper bounds are:
 
 | Resource | Achieved bound |
 |---|---:|
@@ -27,7 +27,7 @@ For rational $`0<\epsilon\le1/4`$, the proved upper bounds are:
 
 Controlled evolution is explicitly supplied, and time means the sum of absolute interaction durations across all experiments. Block-encoding queries are a different access model, not an identification of physical time with gate count. State preparation, oracle construction, known gates, workspace, and finite-accuracy implementation have separate accounting in the [model](science/model.md) and [upper-bound proof](science/multilevel_algorithm.md).
 
-The classical processing bound is beyond reading the encoded tolerance; the tolerance may have an arbitrarily long input representation.
+An additional $`O(b)`$ bit operations handles a binary rational tolerance encoded in $`b`$ bits; the table's bound concerns the subsequent reconstruction. The proof makes this preprocessing explicit by rounding the tolerance down to a dyadic power.
 
 A complementary lower bound holds even when the source is known and freely reversible:
 
@@ -42,7 +42,7 @@ Thus the Hamiltonian precision exponent is optimal, up to logarithmic factors, i
 On the same success event, every 1-Lipschitz function $`f`$ obeys
 
 ```math
-\left|\int f\,d\widehat\mu-\operatorname{Tr}[\rho f(H)]\right|\le\epsilon.
+\left|\int f\,d\widehat\mu-\mathrm{Tr}[\rho f(H)]\right|\le\epsilon.
 ```
 
 The classical output can therefore answer later smooth energy questions without further quantum queries. This interpretation and the reusable-output feature are established ideas in spectral estimation. Wasserstein accuracy does **not** by itself guarantee accurate sharp spectral projectors, rare-event relative errors, or low-temperature relative partition functions. The [interpretation](science/interpretation.md) explains both the useful observables and these limitations.

@@ -25,7 +25,7 @@ Lin–Tong already treats arbitrary mixed sources and explicitly discusses unbia
 Giles–Nagapetyan–Ritter analyzes whole-distribution multilevel approximations under assumptions including density smoothness and a supremum-norm target. The present proof uses
 
 ```math
-\int\operatorname{Var}
+\int\mathrm{Var}
 \bigl(\mathbf1\{Y_\ell\leq x\}
 -\mathbf1\{Y_{\ell-1}\leq x\}\bigr)\,dx
 \leq\mathbb E|Y_\ell-Y_{\ell-1}|
@@ -64,7 +64,7 @@ Ordering the eigenvalues gives the exact identity
 ```math
 W_1(\nu_\tau,\nu_\sigma)
 =\sum_i|\lambda_i(\tau)-\lambda_i(\sigma)|
-=2\operatorname{TV}(\lambda(\tau),\lambda(\sigma)).
+=2\mathrm{TV}(\lambda(\tau),\lambda(\sigma)).
 ```
 
 The obstruction to an immediate transfer is the input normalization. On a family promised to satisfy $`\|d\tau-I\|\leq M`$, set $`H_\tau=(d\tau-I)/M`$. Then
