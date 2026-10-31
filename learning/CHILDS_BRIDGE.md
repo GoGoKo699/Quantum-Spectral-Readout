@@ -32,7 +32,7 @@ Three objects have different roles. A **state** describes the system being measu
 | A unitary eigenvalue written as $`e^{i\varphi}`$ | Write it as $`e^{2\pi i\theta}`$, with $`\theta=\varphi/(2\pi)`$ modulo one. |
 | An $`n`$-qubit phase register | Its clock size is $`M=2^n`$; level $`\ell`$ uses $`M_\ell=2^\ell`$. |
 | A supplied eigenvector | Replace it by a general density operator $`\rho`$; the measurement then samples a source-weighted spectral law. |
-| A matrix in the encoded block | The theorem uses a Hermitian $`H`$ with $`\|H\|\le1`$ and an exact encoding of $`H`$ itself. |
+| A matrix in the encoded block | The theorem uses a Hermitian $`H`$ with $`\lVert H\rVert\le1`$ and an exact encoding of $`H`$ itself. |
 | The encoding unitary $`U`$ | This is Hamiltonian access. It is distinct from a source-preparation unitary $`U_\rho`$. |
 | Oracle cost | Count normalized block queries, or charge an evolution by its absolute duration. A large controlled power is not free. |
 
