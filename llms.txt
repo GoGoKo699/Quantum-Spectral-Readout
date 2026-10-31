@@ -1,0 +1,19 @@
+# Quantum Spectral Readout
+
+> Mathematical research note on producing a finite classical Wasserstein approximation to a source-weighted energy law using independent source copies and controlled Hamiltonian access.
+
+## Scientific entry points
+
+- [Overview](README.md): Main statements, scope, and navigation.
+- [Model](science/model.md): Input, source access, controlled evolution, normalized block encodings, and resource conventions.
+- [Upper theorem](science/multilevel_algorithm.md): Retained-system phase measurements, multilevel CDF estimation, isotonic reconstruction, and finite-accuracy accounting.
+- [Lower bounds](science/lower_bounds.md): Ordered spectral hypercube, arbitrary-output decoder, continuous and discrete oracle bounds, and separate source bounds.
+- [Resources](science/resources.md): Matched comparisons and costs.
+- [Interpretation](science/interpretation.md): Observable implications, physical units, and limitations.
+- [Related work](references/related_work.md): Primary sources and inherited contributions.
+- [Bibliography](references/references.bib): Machine-readable source metadata.
+- [Verification](verification/README.md): Reproduction commands and finite-check scope.
+
+## Reading constraints
+
+The Hamiltonian lower bound is dimension sensitive and uses a different hard family from the copy lower bound. There is no joint per-instance frontier, universal depth lower bound, or claimed practical advantage. Controlled evolution and normalized block-encoding access are explicit assumptions. Finite checks support algebra and conventions; they do not prove asymptotics or certify novelty.

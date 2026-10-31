@@ -1,0 +1,195 @@
+{
+  "scope": "Finite exact-matrix check; not a proof of general query complexity or novelty.",
+  "seed": 20261031,
+  "dimension": 5,
+  "hamiltonian_eigenvalues": [
+    -0.73,
+    -0.16,
+    0.18,
+    0.62,
+    0.85
+  ],
+  "walk_unitarity_error": 1.9702760857339263e-15,
+  "H_cosine_walk_identity_error": 2.4676184592239164e-16,
+  "exact_kraus_checks": {
+    "coherent_pure": {
+      "source_H_commutator_frobenius": 0.8203792307559219,
+      "source_min_eigenvalue": -1.2694761829573505e-16,
+      "latent_weights": [
+        0.30437350070461866,
+        0.4180646067809585,
+        0.008032994036169892,
+        0.07576596175726777,
+        0.1937629367209852
+      ],
+      "joint_normalization_error": 8.881784197001252e-16,
+      "maximum_exact_vs_latent_error": 2.7755575615628914e-16,
+      "maximum_imaginary_residue": 1.7273780013840107e-17,
+      "selected_six_step_path_maximum_error": 5.963111948670274e-19,
+      "retained_vs_reset_total_variation": 0.32214192388522633
+    },
+    "full_rank_mixed": {
+      "source_H_commutator_frobenius": 0.49824005082413003,
+      "source_min_eigenvalue": 0.0035208709192044636,
+      "latent_weights": [
+        0.22459751386293553,
+        0.36466438467066653,
+        0.09379514533236397,
+        0.14438492930579058,
+        0.17255802682824348
+      ],
+      "joint_normalization_error": 1.1102230246251565e-15,
+      "maximum_exact_vs_latent_error": 3.3306690738754696e-16,
+      "maximum_imaginary_residue": 9.895440411933595e-18,
+      "selected_six_step_path_maximum_error": 2.4936649967166602e-18,
+      "retained_vs_reset_total_variation": 0.2988924140087321
+    }
+  },
+  "median_three_resolution_checks": [
+    {
+      "coarse_qpe_clock_size": 4,
+      "fine_qpe_clock_size": 8,
+      "coarse_mean_absolute_eigenvalue_error": 0.3394189163159031,
+      "fine_mean_absolute_eigenvalue_error": 0.12719649449964465,
+      "retained": {
+        "expected_absolute_difference": 0.2915423727273271,
+        "integrated_squared_mean": 0.038389965176335,
+        "integrated_variance": 0.2531524075509921
+      },
+      "reset": {
+        "expected_absolute_difference": 0.5504948773105801,
+        "integrated_squared_mean": 0.03838996517633501,
+        "integrated_variance": 0.5121049121342451
+      }
+    },
+    {
+      "coarse_qpe_clock_size": 8,
+      "fine_qpe_clock_size": 16,
+      "coarse_mean_absolute_eigenvalue_error": 0.12719649449964465,
+      "fine_mean_absolute_eigenvalue_error": 0.13025894714094782,
+      "retained": {
+        "expected_absolute_difference": 0.10395264889793895,
+        "integrated_squared_mean": 0.006899337466225981,
+        "integrated_variance": 0.09705331143171297
+      },
+      "reset": {
+        "expected_absolute_difference": 0.6102305907384671,
+        "integrated_squared_mean": 0.006899337466225982,
+        "integrated_variance": 0.6033312532722411
+      }
+    },
+    {
+      "coarse_qpe_clock_size": 16,
+      "fine_qpe_clock_size": 32,
+      "coarse_mean_absolute_eigenvalue_error": 0.13025894714094782,
+      "fine_mean_absolute_eigenvalue_error": 0.03581559972434971,
+      "retained": {
+        "expected_absolute_difference": 0.1368696226770807,
+        "integrated_squared_mean": 0.018627343959478557,
+        "integrated_variance": 0.11824227871760214
+      },
+      "reset": {
+        "expected_absolute_difference": 0.6451876240357546,
+        "integrated_squared_mean": 0.01862734395947854,
+        "integrated_variance": 0.6265602800762761
+      }
+    },
+    {
+      "coarse_qpe_clock_size": 32,
+      "fine_qpe_clock_size": 64,
+      "coarse_mean_absolute_eigenvalue_error": 0.03581559972434971,
+      "fine_mean_absolute_eigenvalue_error": 0.030980155630058147,
+      "retained": {
+        "expected_absolute_difference": 0.027804551928801477,
+        "integrated_squared_mean": 0.0014560310312230955,
+        "integrated_variance": 0.02634852089757838
+      },
+      "reset": {
+        "expected_absolute_difference": 0.6177864243027218,
+        "integrated_squared_mean": 0.0014560310312230975,
+        "integrated_variance": 0.6163303932714987
+      }
+    },
+    {
+      "coarse_qpe_clock_size": 64,
+      "fine_qpe_clock_size": 128,
+      "coarse_mean_absolute_eigenvalue_error": 0.030980155630058147,
+      "fine_mean_absolute_eigenvalue_error": 0.015299749561936572,
+      "retained": {
+        "expected_absolute_difference": 0.03464905344355064,
+        "integrated_squared_mean": 0.005219386034509985,
+        "integrated_variance": 0.029429667409040655
+      },
+      "reset": {
+        "expected_absolute_difference": 0.6292159400524557,
+        "integrated_squared_mean": 0.005219386034509989,
+        "integrated_variance": 0.6239965540179457
+      }
+    },
+    {
+      "coarse_qpe_clock_size": 128,
+      "fine_qpe_clock_size": 256,
+      "coarse_mean_absolute_eigenvalue_error": 0.015299749561936572,
+      "fine_mean_absolute_eigenvalue_error": 0.009802208373555051,
+      "retained": {
+        "expected_absolute_difference": 0.018485651231377572,
+        "integrated_squared_mean": 0.0019453904022427146,
+        "integrated_variance": 0.01654026082913486
+      },
+      "reset": {
+        "expected_absolute_difference": 0.6244341386344046,
+        "integrated_squared_mean": 0.001945390402242714,
+        "integrated_variance": 0.6224887482321618
+      }
+    },
+    {
+      "coarse_qpe_clock_size": 256,
+      "fine_qpe_clock_size": 512,
+      "coarse_mean_absolute_eigenvalue_error": 0.009802208373555051,
+      "fine_mean_absolute_eigenvalue_error": 0.0026071530336598658,
+      "retained": {
+        "expected_absolute_difference": 0.010625050857279786,
+        "integrated_squared_mean": 0.001307312183721408,
+        "integrated_variance": 0.009317738673558378
+      },
+      "reset": {
+        "expected_absolute_difference": 0.6213336341282472,
+        "integrated_squared_mean": 0.0013073121837214082,
+        "integrated_variance": 0.6200263219445258
+      }
+    }
+  ],
+  "signed_CDF_projection": {
+    "grid_points": 129,
+    "grid_mesh": 0.015625,
+    "source_copies_in_example": 48,
+    "negative_signed_mass_count": 5,
+    "raw_cdf_below_zero_count": 3,
+    "raw_cdf_above_one_count": 10,
+    "projection_solver_success": true,
+    "projection_L1_objective": 0.08813244047619048,
+    "raw_L1_error_to_quantized_target": 0.26139336297580623,
+    "projected_W1_to_quantized_target": 0.1758358853779245,
+    "twice_raw_error_bound": 0.5227867259516125,
+    "target_quantization_W1": 0.004853981469863549,
+    "projected_W1_to_original_target": 0.17916213860148733,
+    "full_bound_2raw_plus_quantization": 0.5276407074214761,
+    "projected_mass_minimum": 0.0,
+    "projected_mass_sum": 1.0,
+    "exact_rational_projector": {
+      "algorithm": "Rote SOSA2019 Section9 unweighted L1 isotonic, exact Fraction arithmetic",
+      "operation_bound": "O(K log K) heap operations for K CDF intervals",
+      "signed_mass_sum_exact": "1",
+      "objective_exact": "2369/26880",
+      "objective_float": 0.08813244047619048,
+      "LP_objective_difference": 0.0,
+      "raw_CDF_float_vs_rational_maximum_error": 2.220446049250313e-16,
+      "probability_mass_sum_exact": "1",
+      "minimum_probability_mass_exact": "0",
+      "positive_probability_masses": 7,
+      "projected_W1_to_quantized_target": 0.17583588537792438,
+      "projected_W1_to_original_target": 0.17916213860148722
+    }
+  },
+  "all_assertions_passed": true
+}
